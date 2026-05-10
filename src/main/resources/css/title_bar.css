@@ -1,0 +1,33 @@
+.title-bar {
+    -fx-background-color: #0e0e0e;
+    -fx-padding: 8px 15px;
+    -fx-border-color: rgba(254, 127, 170, 0.2);
+    -fx-border-width: 0 0 1 0;
+}
+
+.title-text {
+    -fx-text-fill: #dddddd;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-font-family: 'Inter', sans-serif;
+}
+
+.title-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #aaaaaa;
+    -fx-font-size: 16px;
+    -fx-cursor: hand;
+    -fx-min-width: 35px;
+    -fx-min-height: 25px;
+    -fx-background-radius: 4px;
+}
+
+.title-btn:hover {
+    -fx-background-color: rgba(254, 127, 170, 0.15);
+    -fx-text-fill: #fe7faa;
+}
+
+.close-btn:hover {
+    -fx-background-color: #e81123;
+    -fx-text-fill: white;
+}

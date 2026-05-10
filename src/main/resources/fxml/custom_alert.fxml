@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.audioarch.ui.controller.CustomAlertController"
+      style="-fx-background-color: #0e0e0e; -fx-border-color: #fe7faa; -fx-border-width: 1.5; -fx-border-radius: 20; -fx-background-radius: 20;"
+      prefWidth="380" maxWidth="380" spacing="14" alignment="CENTER">
+
+    <effect>
+        <DropShadow color="#fe7faa66" radius="30" spread="0.05"/>
+    </effect>
+
+    <padding>
+        <Insets top="35" right="30" bottom="30" left="30"/>
+    </padding>
+
+    <!-- Icono centrado arriba -->
+    <StackPane alignment="CENTER" maxWidth="Infinity">
+        <Label fx:id="lblIcon" text="&#8505;"
+               alignment="CENTER"
+               style="-fx-text-fill: #fe7faa; -fx-font-size: 38; -fx-font-weight: bold;"/>
+    </StackPane>
+
+    <!-- Título centrado -->
+    <Label fx:id="lblTitle" text="Aviso"
+           wrapText="true"
+           alignment="CENTER"
+           maxWidth="Infinity"
+           style="-fx-text-fill: white; -fx-font-size: 19; -fx-font-weight: bold; -fx-text-alignment: center;"
+           VBox.vgrow="NEVER"/>
+
+    <!-- Mensaje centrado -->
+    <Label fx:id="lblMessage" text="Operación completada."
+           wrapText="true"
+           alignment="CENTER"
+           maxWidth="Infinity"
+           style="-fx-text-fill: #aaa; -fx-font-size: 13; -fx-text-alignment: center;"
+           VBox.vgrow="NEVER">
+        <padding>
+            <Insets top="0" right="10" bottom="0" left="10"/>
+        </padding>
+    </Label>
+
+    <!-- Espaciado antes del botón -->
+    <Region prefHeight="6"/>
+
+    <!-- Botón centrado -->
+    <Button text="ACEPTAR" onAction="#aceptar"
+            prefWidth="160"
+            style="-fx-background-color: #fe7faa; -fx-text-fill: #0e0e0e; -fx-font-weight: bold; -fx-font-size: 13; -fx-background-radius: 25; -fx-padding: 10 30; -fx-cursor: hand;"/>
+
+</VBox>

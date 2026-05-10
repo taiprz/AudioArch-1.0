@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.effect.DropShadow?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.audioarch.ui.controller.ListaUsuariosController"
+      stylesheets="@../css/login.css"
+      styleClass="login-box"
+      prefWidth="480" prefHeight="580" spacing="22">
+    
+    <padding>
+        <Insets top="35" right="35" bottom="35" left="35"/>
+    </padding>
+
+    <HBox alignment="CENTER_LEFT">
+        <Label fx:id="lblTitulo" text="Usuarios" styleClass="logo" style="-fx-font-size: 24px;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="✕" onAction="#cerrarLista" styleClass="nav-button" style="-fx-font-size: 16px; -fx-padding: 5 10;"/>
+    </HBox>
+
+    <Separator opacity="0.1" style="-fx-background-color: white;"/>
+
+    <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: transparent;" hbarPolicy="NEVER" VBox.vgrow="ALWAYS">
+        <VBox fx:id="vboxUsuariosLista" spacing="12" />
+    </ScrollPane>
+
+</VBox>

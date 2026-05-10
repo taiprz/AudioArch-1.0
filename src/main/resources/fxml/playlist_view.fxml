@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.DropShadow?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.audioarch.ui.controller.PlaylistViewController"
+      style="-fx-background-color: radial-gradient(center 50% 50%, radius 70%, rgba(254, 127, 170, 0.11) 0%, #0e0e0e 80%); -fx-padding: 40;"
+      spacing="25" VBox.vgrow="ALWAYS">
+
+    <!-- Header Section -->
+    <HBox spacing="35" alignment="BOTTOM_LEFT">
+        <StackPane>
+            <ImageView fx:id="imgPortada" fitWidth="190" fitHeight="190" preserveRatio="false">
+                 <clip><Rectangle width="190" height="190" arcWidth="25" arcHeight="25" /></clip>
+                 <effect>
+                     <DropShadow color="rgba(0,0,0,0.7)" radius="25" spread="0.1" offsetY="8"/>
+                 </effect>
+            </ImageView>
+        </StackPane>
+        
+        <VBox spacing="8" alignment="BOTTOM_LEFT" HBox.hgrow="ALWAYS">
+            <HBox alignment="CENTER_LEFT">
+                <Label text="PLAYLIST" style="-fx-text-fill: #fec7e8; -fx-font-size: 12px; -fx-font-weight: 800; -fx-letter-spacing: 3px;"/>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button text="✕" onAction="#cerrar" style="-fx-background-color: rgba(255,255,255,0.05); -fx-text-fill: #aaa; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 50; -fx-min-width: 35; -fx-min-height: 35; -fx-cursor: hand; -fx-translate-y: -40;"/>
+            </HBox>
+            
+            <Label fx:id="lblNombre" text="Nombre de Playlist" style="-fx-text-fill: white; -fx-font-size: 58px; -fx-font-weight: 900; -fx-letter-spacing: -1.5px; -fx-translate-y: -10;"/>
+            <Label fx:id="lblDescripcion" text="Descripción..." style="-fx-text-fill: #adaaaa; -fx-font-size: 15px; -fx-wrap-text: true; -fx-max-width: 600; -fx-translate-y: -5;"/>
+            
+            <HBox spacing="15" alignment="CENTER_LEFT" style="-fx-padding: 10 0 0 0;">
+                <Label fx:id="lblMetadata" text="Creada por User • 0 canciones • 0 min" style="-fx-text-fill: #fe7faa; -fx-font-size: 14px; -fx-font-weight: bold;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="btnEditar" text="Editar Detalles" onAction="#abrirEdicion" style="-fx-background-color: linear-gradient(to right, #fec7e8, #ec91ff); -fx-text-fill: #1a001a; -fx-font-weight: 800; -fx-background-radius: 30; -fx-padding: 10 25; -fx-cursor: hand; -fx-font-size: 13px; -fx-effect: dropshadow(three-pass-box, rgba(254, 127, 170, 0.3), 10, 0, 0, 3);" />
+            </HBox>
+        </VBox>
+    </HBox>
+
+    <Separator style="-fx-background-color: rgba(254,127,170,0.15); -fx-padding: 5 0;"/>
+
+    <!-- Header columns -->
+    <HBox spacing="15" style="-fx-padding: 10 35; -fx-border-color: transparent transparent rgba(254,127,170,0.1) transparent; -fx-border-width: 1;">
+        <Label text="#" style="-fx-text-fill: #fec7e8; -fx-min-width: 30; -fx-font-size: 13px; -fx-font-weight: bold;" />
+        <Label text="Título" style="-fx-text-fill: #fec7e8; -fx-font-size: 13px; -fx-font-weight: bold;" HBox.hgrow="ALWAYS" maxWidth="Infinity" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Label text="⏱" style="-fx-text-fill: #fec7e8; -fx-min-width: 50; -fx-font-size: 13px; -fx-font-weight: bold;" />
+    </HBox>
+
+    <!-- Track List -->
+    <ScrollPane fitToWidth="true" style="-fx-background: transparent; -fx-background-color: transparent;" VBox.vgrow="ALWAYS" vbarPolicy="AS_NEEDED" hbarPolicy="NEVER">
+        <VBox fx:id="vboxTracks" spacing="5" style="-fx-padding: 0 10 0 10;">
+            <!-- Items cargados dinamicamente aca -->
+        </VBox>
+    </ScrollPane>
+
+</VBox>

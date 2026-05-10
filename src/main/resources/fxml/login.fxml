@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<BorderPane styleClass="root" stylesheets="@../css/login.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.audioarch.ui.controller.LoginController">
+    <top>
+        <fx:include source="title_bar.fxml"/>
+    </top>
+    <center>
+        <VBox fx:id="rootPane" spacing="18" alignment="CENTER" prefWidth="1920" prefHeight="1080">
+            <VBox spacing="20" alignment="CENTER" VBox.vgrow="ALWAYS" maxWidth="430" maxHeight="540" styleClass="login-box">
+
+        <ImageView fitWidth="90" preserveRatio="true">
+            <image>
+                <Image url="@../imagenes/audio arch - icono.png"/>
+            </image>
+        </ImageView>
+
+        <ImageView fitWidth="300" preserveRatio="true">
+            <image>
+                <Image url="@../imagenes/audioarch - texto.png"/>
+            </image>
+        </ImageView>
+
+        <Label text="Inicia sesión para continuar" style="-fx-text-fill: #adaaaa; -fx-font-size: 14px; -fx-font-weight: 500;"/>
+
+        <TextField fx:id="txtUsuario"
+                   promptText="Correo"
+                   maxWidth="280"/>
+
+        <PasswordField fx:id="txtPassword"
+                       promptText="Contraseña"
+                       maxWidth="280"/>
+
+        <Button text="Iniciar sesión"
+                onAction="#login"
+                maxWidth="280"/>
+
+        <Label fx:id="lblMensaje" styleClass="error"/>
+
+        <HBox alignment="CENTER" spacing="5" style="-fx-padding: 10 0 0 0;">
+            <Label text="¿No tienes una cuenta?" style="-fx-text-fill: #666; -fx-font-size: 13px;"/>
+            <Hyperlink text="Regístrate"
+                       onAction="#handleRegistro"
+                       style="-fx-text-fill: #C492B1; -fx-padding: 0; -fx-border-color: transparent; -fx-font-size: 13px; -fx-font-weight: 700;"/>
+        </HBox>
+
+    </VBox>
+        </VBox>
+    </center>
+</BorderPane>

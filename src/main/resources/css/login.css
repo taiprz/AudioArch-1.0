@@ -1,0 +1,650 @@
+/* ============================================================
+   AudioArch — The Sonic Gallery Design System 
+   ============================================================ */
+
+.root {
+    -fx-background-color: 
+        radial-gradient(focus-angle 45deg, focus-distance 0%, center 15% -10%, radius 65%, rgba(254, 127, 170, 0.3) 0%, rgba(254, 127, 170, 0) 100%),
+        radial-gradient(focus-angle -45deg, focus-distance 0%, center 85% 110%, radius 65%, rgba(236, 145, 255, 0.25) 0%, rgba(236, 145, 255, 0) 100%),
+        #050505;
+    -fx-font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+.login-box {
+    -fx-background-color: rgba(20, 20, 20, 0.95);
+    -fx-background-radius: 24;
+    -fx-padding: 45 40;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.7), 40, 0, 0, 10);
+    -fx-border-color: linear-gradient(to bottom right, rgba(254, 127, 170, 0.3), rgba(236, 145, 255, 0.05));
+    -fx-border-radius: 24;
+    -fx-border-width: 1.5;
+}
+
+.dashboard-root {
+    -fx-background-color: #050505;
+}
+
+/* Redesigned Dashboard Center Background */
+.dashboard-center {
+    -fx-background-color: 
+        radial-gradient(center 50% 50%, radius 70%, rgba(254, 127, 170, 0.08) 0%, #0e0e0e 80%);
+}
+
+/* Logo */
+.logo {
+    -fx-font-size: 32px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #fec7e8;
+    -fx-letter-spacing: -1px;
+}
+
+/* Texto normal */
+.label {
+    -fx-text-fill: #adaaaa;
+    -fx-font-size: 14px;
+}
+
+/* Inputs */
+.text-field,
+.password-field {
+    -fx-background-color: rgba(30, 30, 30, 0.6);
+    -fx-border-color: rgba(254, 127, 170, 0.15);
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #6a6a6a;
+    -fx-padding: 12 16;
+    -fx-font-size: 14px;
+    -fx-transition: all 0.3s ease;
+}
+
+.text-field:focused,
+.password-field:focused {
+    -fx-border-color: #fe7faa;
+    -fx-effect: dropshadow(three-pass-box, rgba(254, 127, 170, 0.25), 10, 0, 0, 0);
+    -fx-background-color: rgba(40, 40, 40, 0.9);
+}
+
+/* Botón (Principal/General) */
+.button {
+    -fx-background-color: linear-gradient(to right, #fec7e8, #ec91ff);
+    -fx-text-fill: #1a001a;
+    -fx-font-weight: 700;
+    -fx-background-radius: 30;
+    -fx-padding: 12 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(254, 127, 170, 0.3), 12, 0, 0, 3);
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to right, #ffcfec, #f0a8ff);
+    -fx-effect: dropshadow(three-pass-box, rgba(254, 127, 170, 0.5), 15, 0, 0, 5);
+}
+
+.button:pressed {
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+.button-principal {
+    -fx-background-color: linear-gradient(to right, #fec7e8, #ec91ff);
+    -fx-text-fill: #1a001a;
+    -fx-font-weight: 700;
+    -fx-background-radius: 30;
+    -fx-padding: 12 20;
+    -fx-cursor: hand;
+}
+
+/* Mensaje error */
+.error {
+    -fx-text-fill: #ff5a5a;
+    -fx-font-weight: 700;
+}
+
+/* Estilo para el Buscador con degradado -> Neon style */
+.search-bar-custom {
+    -fx-background-color: #191a1a;
+    -fx-border-color: rgba(254, 127, 170, 0.25);
+    -fx-border-width: 1.5;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #4a4a4a;
+    -fx-padding: 10 20;
+    -fx-font-size: 14;
+}
+
+.search-bar-custom:focused {
+    -fx-border-color: #fe7faa;
+    -fx-effect: dropshadow(three-pass-box, rgba(254, 127, 170, 0.2), 15, 0, 0, 0);
+}
+
+/* Sidebar */
+.sidebar {
+    -fx-background-color: #000000;
+}
+
+/* Welcome Box */
+.welcome-box {
+    -fx-background-color: #191a1a;
+    -fx-border-color: rgba(173, 170, 170, 0.1);
+    -fx-border-width: 1;
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-padding: 18;
+}
+
+/* Tarjetas de canciones */
+.song-card {
+    -fx-background-color: rgba(25, 26, 26, 0.8);
+    -fx-background-radius: 28;
+    -fx-padding: 20;
+    -fx-border-color: rgba(254, 127, 170, 0.12);
+    -fx-border-width: 1.5;
+    -fx-border-radius: 28;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 25, 0, 0, 12);
+}
+
+.song-card:hover {
+    -fx-background-color: rgba(254, 127, 170, 0.1);
+    -fx-border-color: rgba(254, 127, 170, 0.5);
+    -fx-effect: dropshadow(three-pass-box, rgba(254, 127, 170, 0.25), 30, 0, 0, 0);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+/* Efecto Vinilo Circular */
+.circular-image {
+    -fx-background-radius: 50%;
+    -fx-border-radius: 50%;
+}
+
+/* Caja de reseña Eyepleasing con borde Neón */
+.text-area-neon {
+    -fx-control-inner-background: #0e0e0e;
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+    -fx-border-color: #fe7faa;
+    -fx-border-width: 1;
+    -fx-border-radius: 14;
+    -fx-background-radius: 14;
+    -fx-effect: dropshadow(three-pass-box, rgba(254, 127, 170, 0.35), 14, 0.2, 0, 0);
+    -fx-prompt-text-fill: #4a4a4a;
+    -fx-padding: 0;
+    -fx-focus-color: transparent;
+}
+
+.text-area-neon .content {
+    -fx-background-color: #0e0e0e;
+    -fx-background-radius: 14;
+    -fx-padding: 12;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+}
+
+.text-area-neon:focused {
+    -fx-border-color: #fec7e8;
+    -fx-effect: dropshadow(three-pass-box, rgba(254, 127, 170, 0.65), 18, 0.3, 0, 0);
+}
+
+/* Botones de navegación y auxiliares */
+.btn-resena-mini {
+    -fx-background-color: #262626;
+    -fx-text-fill: #adaaaa;
+    -fx-font-size: 11px;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-padding: 5 10;
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #777777;
+    -fx-font-size: 15px;
+    -fx-font-weight: 600;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+    -fx-background-radius: 12;
+}
+
+.nav-button:hover {
+    -fx-text-fill: #fec7e8;
+    -fx-background-color: rgba(254, 127, 170, 0.08);
+}
+
+/* Tarjetas de canciones V2 - Estilo Card */
+.song-card-v2 {
+    -fx-background-color: #1a1a1a;
+    -fx-background-radius: 24;
+    -fx-border-radius: 24;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(255, 128, 171, 0.05), 20, 0, 0, 10);
+}
+
+.song-card-v2:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(254, 127, 170, 0.4), 25, 0, 0, 0);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+.card-gradient-overlay {
+    -fx-background-color: linear-gradient(to top, rgba(0,0,0, 0.95), rgba(0,0,0, 0.45) 30%, transparent 60%);
+}
+
+.card-title {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 16;
+}
+
+.card-subtitle {
+    -fx-text-fill: rgba(255,255,255,0.7);
+    -fx-font-size: 12;
+}
+
+.btn-card-action {
+    -fx-background-color: rgba(254, 127, 170, 0.15);
+    -fx-background-radius: 12;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 12;
+    -fx-padding: 8 15;
+    -fx-border-color: rgba(254, 127, 170, 0.3);
+    -fx-border-radius: 12;
+    -fx-cursor: hand;
+}
+
+.btn-card-action:hover {
+    -fx-background-color: rgba(254, 127, 170, 0.35);
+    -fx-border-color: #fe7faa;
+}
+
+.btn-card-action-mini {
+    -fx-background-color: rgba(254, 127, 170, 0.15);
+    -fx-background-radius: 12;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14;
+    -fx-padding: 5 10;
+    -fx-border-color: rgba(254, 127, 170, 0.3);
+    -fx-border-radius: 12;
+    -fx-cursor: hand;
+}
+
+.btn-card-action-mini:hover {
+    -fx-background-color: rgba(254, 127, 170, 0.35);
+    -fx-border-color: #fe7faa;
+}
+
+/* Dropdowns & Scrollbars */
+.glass-combo-box {
+    -fx-background-color: rgba(254, 127, 170, 0.05);
+    -fx-border-color: rgba(254, 127, 170, 0.2);
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-text-fill: white;
+    -fx-padding: 6 12;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+
+.glass-combo-box .list-cell {
+    -fx-text-fill: #adaaaa;
+    -fx-background-color: transparent;
+}
+
+.glass-combo-box:hover {
+    -fx-background-color: rgba(254, 127, 170, 0.12);
+    -fx-border-color: #fe7faa;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: rgba(20, 20, 20, 0.95);
+    -fx-background-radius: 14;
+    -fx-border-color: rgba(254, 127, 170, 0.3);
+    -fx-border-radius: 14;
+    -fx-padding: 6;
+}
+
+.combo-box-popup .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #adaaaa;
+    -fx-padding: 8 12;
+}
+
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: rgba(254, 127, 170, 0.15);
+    -fx-text-fill: #fec7e8;
+}
+
+.combo-box-popup .list-cell:selected {
+    -fx-background-color: rgba(254, 127, 170, 0.3);
+    -fx-text-fill: #fec7e8;
+}
+
+/* Neon Scrollbar */
+.scroll-bar {
+    -fx-background-color: transparent;
+    -fx-pref-width: 8;
+}
+
+.scroll-bar .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: rgba(254, 127, 170, 0.4);
+    -fx-background-radius: 4;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #fe7faa;
+}
+
+.scroll-pane, .scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* Grilla y Tarjetas de Reseñas (Shadow Fix) */
+.results-grid {
+    -fx-background-color: transparent;
+    -fx-padding: 0 10 25 10; 
+}
+
+.review-card {
+    -fx-background-color: rgba(30, 30, 30, 0.9);
+    -fx-background-radius: 28;
+    -fx-border-color: rgba(254, 127, 170, 0.3);
+    -fx-border-width: 1.5;
+    -fx-border-radius: 28;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 20, 0, 0, 10);
+    -fx-transition: all 0.3s ease;
+}
+
+.review-card:hover {
+    -fx-border-color: #ff80ab;
+    -fx-effect: dropshadow(three-pass-box, rgba(254, 127, 170, 0.4), 25, 0, 0, 0);
+}
+
+.review-card-feed {
+    -fx-background-color: rgba(20, 20, 20, 0.85);
+    -fx-padding: 20;
+    -fx-border-color: rgba(254, 127, 170, 0.25);
+    -fx-border-width: 2;
+    -fx-border-radius: 24;
+    -fx-background-radius: 24;
+}
+
+.review-card-info {
+    -fx-padding: 10 15;
+}
+
+.btn-danger-outline {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ff5a5a;
+    -fx-border-color: rgba(255, 90, 90, 0.6);
+    -fx-border-radius: 15;
+    -fx-font-size: 10;
+    -fx-font-weight: bold;
+    -fx-padding: 5 15;
+    -fx-cursor: hand;
+}
+
+.btn-danger-outline:hover {
+    -fx-background-color: rgba(255, 90, 90, 0.1);
+}
+
+.btn-secondary-solid {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-text-fill: #fe7faa;
+    -fx-border-color: rgba(254, 127, 170, 0.3);
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+    -fx-font-size: 10;
+    -fx-font-weight: bold;
+    -fx-padding: 5 15;
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease;
+}
+
+.btn-secondary-solid:hover {
+    -fx-background-color: rgba(254, 127, 170, 0.15);
+    -fx-text-fill: white;
+}
+
+.btn-logout {
+    -fx-background-color: transparent;
+    -fx-text-fill: #fe7faa;
+    -fx-border-color: rgba(254, 127, 170, 0.4);
+    -fx-border-width: 1.5;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-font-weight: 700;
+    -fx-font-size: 13;
+    -fx-cursor: hand;
+    -fx-padding: 8 20;
+    -fx-transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+    -fx-background-color: rgba(254, 127, 170, 0.1);
+    -fx-border-color: #fe7faa;
+    -fx-effect: dropshadow(three-pass-box, rgba(254, 127, 170, 0.3), 10, 0, 0, 0);
+}
+
+.btn-toggle-sidebar {
+    -fx-background-color: rgba(20, 20, 20, 0.85);
+    -fx-text-fill: #fe7faa;
+    -fx-font-size: 18px;
+    -fx-background-radius: 0 15 15 0;
+    -fx-cursor: hand;
+    -fx-padding: 12 12;
+    -fx-border-color: rgba(254, 127, 170, 0.5);
+    -fx-border-width: 2 2 2 0;
+    -fx-border-radius: 0 15 15 0;
+    -fx-effect: dropshadow(three-pass-box, rgba(254, 127, 170, 0.4), 15, 0, 0, 0);
+}
+
+.btn-toggle-sidebar:hover {
+    -fx-background-color: rgba(254, 127, 170, 0.4);
+    -fx-text-fill: white;
+    -fx-scale-x: 1.1;
+}
+
+/* ===================== PLAYLIST ITEM BUTTONS ===================== */
+
+.playlist-item-btn {
+    -fx-background-color: rgba(40, 40, 40, 0.8);
+    -fx-text-fill: #e0e0e0;
+    -fx-cursor: hand;
+    -fx-alignment: BASELINE_LEFT;
+    -fx-padding: 10 18;
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(254, 127, 170, 0.15);
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+    -fx-font-size: 13;
+}
+
+.playlist-item-btn:hover {
+    -fx-background-color: rgba(254, 127, 170, 0.2);
+    -fx-text-fill: white;
+    -fx-border-color: rgba(254, 127, 170, 0.5);
+    -fx-effect: dropshadow(three-pass-box, rgba(254, 127, 170, 0.2), 8, 0, 0, 0);
+}
+
+/* ===================== PLAY OVERLAY (HOVER) ===================== */
+
+.play-overlay {
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+    -fx-background-radius: 24;
+    -fx-cursor: hand;
+}
+
+.play-overlay-icon {
+    -fx-text-fill: rgba(254, 127, 170, 0.95);
+    -fx-font-size: 48;
+    -fx-effect: dropshadow(three-pass-box, rgba(254, 127, 170, 0.6), 20, 0.3, 0, 0);
+}
+
+/* ===================== FEED SECTIONS ===================== */
+
+.feed-section-title {
+    -fx-text-fill: white;
+    -fx-font-size: 22;
+    -fx-font-weight: bold;
+    -fx-padding: 5 0 8 5;
+    -fx-border-color: transparent transparent rgba(254, 127, 170, 0.3) transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-effect: dropshadow(three-pass-box, rgba(254, 127, 170, 0.8), 10, 0, 0, 0);
+}
+
+.feed-section-subtitle {
+    -fx-text-fill: #bbb;
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+    -fx-padding: 5 0 3 5;
+}
+
+.btn-ver-mas {
+    -fx-background-color: rgba(254, 127, 170, 0.15);
+    -fx-text-fill: #fe7faa;
+    -fx-font-weight: bold;
+    -fx-font-size: 13;
+    -fx-background-radius: 20;
+    -fx-border-color: rgba(254, 127, 170, 0.4);
+    -fx-border-radius: 20;
+    -fx-border-width: 1;
+    -fx-padding: 8 25;
+    -fx-cursor: hand;
+}
+
+.btn-ver-mas:hover {
+    -fx-background-color: rgba(254, 127, 170, 0.3);
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(254, 127, 170, 0.3), 10, 0, 0, 0);
+}
+
+/* ===================== MINI PLAYER PROGRESS BAR ===================== */
+
+.mini-player-progress {
+    -fx-accent: #fe7faa;
+    -fx-control-inner-background: rgba(50, 50, 50, 0.8);
+    -fx-pref-height: 6;
+}
+
+.mini-player-progress .bar {
+    -fx-background-color: linear-gradient(to right, #fe7faa, #C492B1);
+    -fx-background-radius: 3;
+    -fx-background-insets: 0;
+}
+
+.mini-player-progress .track {
+    -fx-background-color: rgba(50, 50, 50, 0.8);
+    -fx-background-radius: 3;
+    -fx-background-insets: 0;
+}
+
+/* ===================== NEW BUTTON STYLES ===================== */
+
+.btn-play-pause-sleek {
+    -fx-background-color: #fe7faa;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-background-radius: 50%;
+    -fx-min-width: 45px;
+    -fx-min-height: 45px;
+    -fx-max-width: 45px;
+    -fx-max-height: 45px;
+    -fx-pref-width: 45px;
+    -fx-pref-height: 45px;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(three-pass-box, rgba(254, 127, 170, 0.5), 10, 0, 0, 3);
+}
+
+.btn-play-pause-sleek:hover {
+    -fx-background-color: #ffa5c4;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.btn-play-pause-sleek:pressed {
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+    -fx-background-color: #d86892;
+}
+
+.btn-ver-mas-feed {
+    -fx-background-color: transparent;
+    -fx-text-fill: #fe7faa;
+    -fx-border-color: #fe7faa;
+    -fx-border-radius: 20;
+    -fx-border-width: 1;
+    -fx-padding: 8 20;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-min-width: 200px;
+}
+
+.btn-ver-mas-feed:hover {
+    -fx-background-color: rgba(254, 127, 170, 0.1);
+}
+
+.btn-eliminar-white {
+    -fx-background-color: transparent;
+    -fx-border-color: rgba(255, 255, 255, 0.4);
+    -fx-border-radius: 20;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-padding: 5 15;
+    -fx-cursor: hand;
+}
+
+.btn-eliminar-white:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* ============================================================
+   Skeleton Loading States
+   ============================================================ */
+
+.skeleton-card {
+    -fx-background-color: rgba(22, 22, 22, 0.95);
+    -fx-background-radius: 18;
+    -fx-border-color: rgba(254, 127, 170, 0.07);
+    -fx-border-radius: 18;
+    -fx-border-width: 1;
+}
+
+.skeleton-image {
+    -fx-background-color: rgba(45, 45, 45, 1);
+    -fx-background-radius: 12;
+}
+
+.skeleton-line {
+    -fx-background-color: rgba(55, 55, 55, 1);
+    -fx-background-radius: 6;
+}
+
+.skeleton-line-short {
+    -fx-background-color: rgba(42, 42, 42, 1);
+    -fx-background-radius: 6;
+}
+
+.skeleton-avatar {
+    -fx-background-color: rgba(48, 48, 48, 1);
+    -fx-background-radius: 50;
+}
+
+.skeleton-row {
+    -fx-background-color: rgba(18, 18, 18, 0.9);
+    -fx-background-radius: 16;
+    -fx-border-color: rgba(254, 127, 170, 0.05);
+    -fx-border-radius: 16;
+    -fx-border-width: 1;
+}

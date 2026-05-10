@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.effect.DropShadow?>
+
+<BorderPane styleClass="dashboard-root"
+            stylesheets="@../css/login.css"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.audioarch.ui.controller.DashboardController">
+
+    <top>
+        <fx:include source="title_bar.fxml"/>
+    </top>
+
+    <left>
+        <VBox fx:id="sideBar" spacing="25" styleClass="sidebar" prefWidth="250" alignment="TOP_CENTER" style="-fx-background-color: #000000; -fx-padding: 30 20;">
+
+            <VBox styleClass="welcome-box" spacing="8" alignment="CENTER" style="-fx-background-color: #1a1a1a; -fx-background-radius: 14; -fx-padding: 18; -fx-border-color: rgba(173,170,170,0.1); -fx-border-radius: 14; -fx-min-width: 210;">
+                <HBox spacing="8" alignment="CENTER">
+                    <Label text="¡Bienvenido," style="-fx-text-fill: white; -fx-font-size: 16;"/>
+                    <Label fx:id="lblBienvenidaNombre" text="Usuario!" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16;"/>
+                </HBox>
+            </VBox>
+
+            <Separator opacity="0.1" maxWidth="200"/>
+
+            <VBox spacing="10" alignment="CENTER_LEFT">
+            <Button text="🏠 Home" onAction="#cargarFeed" graphicTextGap="12"
+                    style="-fx-background-color: rgba(254,127,170,0.15); -fx-text-fill: #fec7e8; -fx-font-weight: 700; -fx-font-size: 15px; -fx-background-radius: 12; -fx-padding: 12 20; -fx-cursor: hand; -fx-min-width: 190; -fx-border-color: transparent transparent transparent #fe7faa; -fx-border-width: 0 0 0 3; -fx-alignment: CENTER_LEFT;"/>
+            <Button text="👤 Profile" onAction="#abrirMiPerfil" styleClass="nav-button" maxWidth="Infinity" alignment="BASELINE_LEFT" style="-fx-font-size: 15px;"/>
+            </VBox>
+
+            <Region VBox.vgrow="ALWAYS" />
+
+            <!-- Mini Player (Sleek Card Design) -->
+            <VBox fx:id="miniPlayer" spacing="0" visible="false" managed="false"
+                  style="-fx-background-color: #1a1a1a; -fx-background-radius: 16; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 15, 0, 0, 5); -fx-padding: 10;">
+                
+                <StackPane>
+                    <ImageView fx:id="mpCover" fitWidth="200" fitHeight="200" preserveRatio="false">
+                        <clip>
+                            <javafx.scene.shape.Rectangle width="200" height="200" arcWidth="20" arcHeight="20"/>
+                        </clip>
+                    </ImageView>
+                    <!-- Play/Pause Button Floating on top-right or just below? Let's put it in the info section. -->
+                </StackPane>
+
+                <VBox spacing="10" style="-fx-padding: 15 5 5 5;">
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <VBox HBox.hgrow="ALWAYS" spacing="2">
+                            <Label fx:id="mpTitle" text="" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: 800;" ellipsisString="..."/>
+                            <Label fx:id="mpArtist" text="" style="-fx-text-fill: #aaa; -fx-font-size: 13px;" ellipsisString="..."/>
+                        </VBox>
+                        <Button fx:id="mpPlayPause" text="⏸" onAction="#togglePlayPause"
+                                styleClass="btn-play-pause-sleek"/>
+                    </HBox>
+                    <ProgressBar fx:id="mpProgress" prefWidth="200" progress="0" styleClass="mini-player-progress"/>
+                </VBox>
+            </VBox>
+
+            <Button text="Cerrar sesión" onAction="#cerrarSesion" styleClass="btn-logout" maxWidth="Infinity">
+            </Button>
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane fx:id="pnlCentral">
+            <VBox fx:id="vistaPrincipal" spacing="25" styleClass="dashboard-center" style="-fx-padding: 0 40 40 40;">
+                
+            <VBox alignment="CENTER" spacing="15" style="-fx-padding: 40 0 0 0;">
+                <HBox alignment="CENTER" spacing="25">
+                    <ImageView fitHeight="160" preserveRatio="true">
+                        <Image url="@../imagenes/audio arch - icono.png"/>
+                    </ImageView>
+                    <ImageView fitHeight="100" preserveRatio="true">
+                        <Image url="@../imagenes/audioarch - texto.png"/>
+                    </ImageView>
+                </HBox>
+
+                <HBox alignment="CENTER">
+                    <Region HBox.hgrow="ALWAYS" />
+                    <HBox alignment="CENTER" maxWidth="900" prefWidth="750"
+                          style="-fx-background-color: rgba(15, 15, 15, 0.85); -fx-background-radius: 45; -fx-border-color: rgba(254, 127, 170, 0.4); -fx-border-radius: 45; -fx-border-width: 2.5; -fx-padding: 12 25; -fx-effect: dropshadow(three-pass-box, rgba(254,127,170,0.2), 35,0,0,0);">
+                        <ComboBox fx:id="cmbFiltro" 
+                                  styleClass="glass-combo-box"
+                                  prefWidth="160" />
+                        <Region prefWidth="15" />
+                        <Separator orientation="VERTICAL" style="-fx-background-color: #555;" opacity="0.3" prefHeight="25" />
+                        <Region prefWidth="15" />
+                        <TextField fx:id="txtBuscador" promptText="Archiva tus canciones y álbumes favoritos..."
+                                   HBox.hgrow="ALWAYS"
+                                   onKeyReleased="#manejarBusqueda"
+                                   style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: white; -fx-font-size: 18; -fx-prompt-text-fill: #555;"/>
+                    </HBox>
+                    <Region HBox.hgrow="ALWAYS" />
+                </HBox>
+            </VBox>
+
+            <ScrollPane fitToWidth="true" style="-fx-background: transparent; -fx-background-color: transparent;" hbarPolicy="NEVER" VBox.vgrow="ALWAYS">
+                <VBox fx:id="panelResultados" spacing="35" styleClass="results-grid" />
+            </ScrollPane>
+            </VBox>
+            
+            <!-- Sidebar Toggle Button (Always on top and glued to left edge) -->
+            <Button fx:id="btnToggle" text="☰" onAction="#toggleSidebar" 
+                    styleClass="btn-toggle-sidebar" StackPane.alignment="TOP_LEFT"
+                    style="-fx-translate-x: -2; -fx-translate-y: 20;"/>
+        </StackPane>
+    </center>
+</BorderPane>

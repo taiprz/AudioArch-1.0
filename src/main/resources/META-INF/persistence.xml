@@ -1,0 +1,36 @@
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
+
+    <persistence-unit name="Persistencia" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!-- Registro explícito de entidades para que Hibernate cree las tablas -->
+        <class>com.audioarch.domain.model.Usuario</class>
+        <class>com.audioarch.domain.model.Cancion</class>
+        <class>com.audioarch.domain.model.Album</class>
+        <class>com.audioarch.domain.model.Artista</class>
+        <class>com.audioarch.domain.model.Calificacion</class>
+        <class>com.audioarch.domain.model.Playlist</class>
+        <class>com.audioarch.domain.model.ItemPlaylist</class>
+        <class>com.audioarch.domain.model.Seguimiento</class>
+        <class>com.audioarch.domain.model.SeguimientoArtista</class>
+
+        <properties>
+
+            <!-- Neon.tech PostgreSQL Cloud Database -->
+            <property name="jakarta.persistence.jdbc.url"
+                      value="jdbc:postgresql://ep-fancy-night-apdo3uha.c-7.us-east-1.aws.neon.tech/neondb?sslmode=require"/>
+            <property name="jakarta.persistence.jdbc.user" value="neondb_owner"/>
+            <property name="jakarta.persistence.jdbc.password" value="npg_7gRhmioMXWB4"/>
+            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+
+        </properties>
+
+    </persistence-unit>
+</persistence>

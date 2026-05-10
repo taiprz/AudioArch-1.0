@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<BorderPane styleClass="root" stylesheets="@../css/login.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.audioarch.ui.controller.RegistroController">
+    <top>
+        <fx:include source="title_bar.fxml"/>
+    </top>
+    <center>
+        <VBox spacing="12" alignment="CENTER">
+            <VBox spacing="16" alignment="CENTER" maxWidth="450" maxHeight="580" styleClass="login-box">
+
+        <ImageView fitWidth="100" preserveRatio="true">
+            <Image url="@../imagenes/audio arch - icono.png"/>
+        </ImageView>
+
+        <Label text="Crear nueva cuenta" style="-fx-font-size: 25px; -fx-font-weight: 700; -fx-text-fill: white;"/>
+
+    <TextField fx:id="txtNuevoUsuario"
+               promptText="username123"
+               maxWidth="280"/>
+
+    <TextField fx:id="txtEmail"
+               promptText="example@gmail.com"
+               maxWidth="280"/>
+
+    <PasswordField fx:id="txtPassword"
+                   promptText="********"
+                   maxWidth="280"/>
+
+    <PasswordField fx:id="txtConfirmarPassword"
+                   promptText="********"
+                   maxWidth="280"/>
+
+    <HBox maxWidth="280" alignment="CENTER_LEFT" spacing="10">
+        <CheckBox fx:id="checkTerminos" styleClass="check-box"/>
+        <Label text="Acepto los términos y condiciones" style="-fx-text-fill: #adaaaa; -fx-font-size: 12px;"/>
+    </HBox>
+
+    <Button text="Registrarse"
+            onAction="#registrarUsuario"
+            maxWidth="280"
+            styleClass="button-principal"/>
+
+    <Hyperlink text="¿Ya tienes cuenta? Inicia sesión"
+               onAction="#volverLogin"
+               style="-fx-text-fill: #C492B1; -fx-font-weight: 700; -fx-font-size: 13px; -fx-border-color: transparent;"/>
+    </VBox>
+
+    <!-- Mensaje de validación fuera del VBox acotado para que no se corte -->
+    <Label fx:id="lblMensaje"
+           alignment="CENTER"
+           textAlignment="CENTER"
+           wrapText="true"
+           maxWidth="420"
+           style="-fx-text-fill: #C492B1; -fx-font-weight: 700; -fx-font-size: 13px; -fx-padding: 4 0 0 0;"/>
+        </VBox>
+    </center>
+</BorderPane>

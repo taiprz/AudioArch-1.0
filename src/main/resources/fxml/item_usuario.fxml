@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+
+<VBox spacing="10" styleClass="song-card" prefWidth="200"
+      style="-fx-background-color: #1a1a1a; -fx-padding: 15; -fx-background-radius: 10; -fx-border-color: #1a1a1a; -fx-border-radius: 10;"
+      stylesheets="@../css/login.css" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml" fx:controller="com.audioarch.ui.controller.ItemUsuarioController">
+
+    <!-- FOTO CIRCULAR con clip, igual que en perfil.fxml -->
+    <HBox alignment="CENTER">
+        <StackPane minWidth="90" maxWidth="90" minHeight="90" maxHeight="90">
+            <ImageView fx:id="imgFotoPerfil" fitHeight="90" fitWidth="90" preserveRatio="false">
+                <Image url="@../imagenes/audio arch - icono.png"/>
+                <clip>
+                    <Circle centerX="45" centerY="45" radius="45" />
+                </clip>
+            </ImageView>
+        </StackPane>
+    </HBox>
+
+    <Label fx:id="lblUsername" text="@usuario" alignment="CENTER" maxWidth="Infinity" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16;"/>
+
+    <Label fx:id="lblBio" text="Biografía..." wrapText="true" alignment="CENTER" maxWidth="Infinity" minHeight="40" style="-fx-text-fill: #b3b3b3; -fx-font-size: 12;"/>
+
+    <Button fx:id="btnVerPerfil" text="Ver Perfil" onAction="#abrirPerfil" maxWidth="Infinity" 
+            style="-fx-background-color: transparent; -fx-border-color: #fe7faa; -fx-text-fill: #fe7faa; -fx-border-radius: 20; -fx-cursor: hand;"/>
+</VBox>

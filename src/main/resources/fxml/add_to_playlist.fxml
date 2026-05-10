@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.geometry.Insets?>
+
+<StackPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.audioarch.ui.controller.AddToPlaylistController"
+           style="-fx-background-color: transparent; -fx-padding: 25;">
+           
+    <VBox stylesheets="@../css/login.css"
+          style="-fx-background-color: #0f0f0f; -fx-padding: 35; -fx-border-color: #fe7faa; -fx-border-width: 1.5; -fx-border-radius: 25; -fx-background-radius: 25;"
+          prefWidth="400" spacing="20" alignment="CENTER">
+
+        <effect>
+            <DropShadow color="#fe7faa88" radius="30" spread="0.1" />
+        </effect>
+
+        <!-- Header -->
+        <HBox alignment="CENTER_LEFT">
+            <Label text="Añadir a Playlist" styleClass="logo" style="-fx-font-size: 22px; -fx-text-fill: white;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="✕" onAction="#cerrar" style="-fx-background-color: transparent; -fx-text-fill: #aaa; -fx-font-size: 16px; -fx-cursor: hand;"/>
+        </HBox>
+
+        <Label text="Mis Playlists:" styleClass="label" style="-fx-font-weight: bold; -fx-text-fill: white;"/>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: transparent;" prefHeight="180" vbarPolicy="AS_NEEDED">
+           <VBox fx:id="vboxPlaylists" spacing="8" style="-fx-background-color: rgba(30, 30, 30, 0.6); -fx-padding: 12; -fx-background-radius: 14; -fx-border-color: rgba(254, 127, 170, 0.15); -fx-border-radius: 14; -fx-border-width: 1;">
+                <!-- Dynamic playlists here -->
+           </VBox>
+        </ScrollPane>
+
+        <Separator opacity="0.1" style="-fx-background-color: white;"/>
+
+        <HBox spacing="12" alignment="CENTER_LEFT">
+            <TextField fx:id="txtNuevaPlaylist" promptText="Nueva playlist..." styleClass="text-field" HBox.hgrow="ALWAYS"/>
+            <Button text="Crear" onAction="#crearPlaylist" styleClass="button-principal" style="-fx-padding: 10 20; -fx-text-fill: white;"/>
+        </HBox>
+
+    </VBox>
+</StackPane>

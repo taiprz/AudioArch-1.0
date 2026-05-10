@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.geometry.Insets?>
+
+<StackPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.audioarch.ui.controller.EditarPerfilController"
+           style="-fx-background-color: transparent; -fx-padding: 25;">
+           
+    <VBox stylesheets="@../css/login.css"
+          style="-fx-background-color: #0f0f0f; -fx-padding: 35; -fx-border-color: #fe7faa; -fx-border-width: 1.5; -fx-border-radius: 25; -fx-background-radius: 25;"
+          prefWidth="500" spacing="22">
+        
+        <effect>
+            <DropShadow color="#fe7faa88" radius="30" spread="0.1" />
+        </effect>
+
+        <!-- Header -->
+        <HBox alignment="CENTER_LEFT">
+            <Label text="Editar Perfil" styleClass="logo" style="-fx-font-size: 24px; -fx-text-fill: white;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="✕" onAction="#cerrar" style="-fx-background-color: transparent; -fx-text-fill: #aaa; -fx-font-size: 16px; -fx-cursor: hand;"/>
+        </HBox>
+
+        <!-- Foto de perfil -->
+        <HBox alignment="CENTER" spacing="20">
+            <VBox alignment="CENTER">
+                <!-- Neon ring around image -->
+                <StackPane style="-fx-border-color: #fe7faa; -fx-border-width: 2; -fx-border-radius: 50; -fx-padding: 4;">
+                    <ImageView fx:id="imgPreview" fitHeight="80" fitWidth="80" preserveRatio="false">
+                         <clip>
+                             <Circle centerX="40" centerY="40" radius="40" />
+                         </clip>
+                    </ImageView>
+                </StackPane>
+            </VBox>
+            <VBox spacing="8" HBox.hgrow="ALWAYS" alignment="CENTER_LEFT">
+                 <Label text="Foto de Perfil (URL o Local)" styleClass="label" style="-fx-font-weight: bold; -fx-text-fill: white;"/>
+                 <HBox spacing="10">
+                     <TextField fx:id="txtFoto" promptText="https://... o archivo" styleClass="text-field" HBox.hgrow="ALWAYS"/>
+                     <Button text="Explorar..." onAction="#seleccionarArchivo" styleClass="button" style="-fx-padding: 10 15;"/>
+                 </HBox>
+            </VBox>
+        </HBox>
+
+        <VBox spacing="8">
+            <Label text="Banner del Perfil" styleClass="label" style="-fx-font-weight: bold; -fx-text-fill: white;"/>
+            <StackPane style="-fx-border-color: rgba(254, 127, 170, 0.4); -fx-border-width: 1; -fx-border-radius: 12; -fx-background-color: rgba(30, 30, 30, 0.4); -fx-background-radius: 12;">
+                <ImageView fx:id="imgBannerPreview" fitWidth="420" fitHeight="100" preserveRatio="false" opacity="0.6">
+                     <clip>
+                         <Rectangle width="420" height="100" arcWidth="12" arcHeight="12" />
+                     </clip>
+                </ImageView>
+            </StackPane>
+            <HBox spacing="10" style="-fx-padding: 5 0 0 0;">
+                <TextField fx:id="txtBanner" promptText="URL del banner o archivo local..." styleClass="text-field" HBox.hgrow="ALWAYS"/>
+                <Button text="Explorar..." onAction="#seleccionarArchivoBanner" styleClass="button" style="-fx-padding: 10 15;"/>
+            </HBox>
+        </VBox>
+
+        <VBox spacing="8">
+            <Label text="Nombre de Usuario" styleClass="label" style="-fx-font-weight: bold; -fx-text-fill: white;"/>
+            <TextField fx:id="txtUser" styleClass="text-field" promptText="Nombre de usuario"/>
+        </VBox>
+
+        <VBox spacing="8">
+            <Label text="Biografía" styleClass="label" style="-fx-font-weight: bold; -fx-text-fill: white;"/>
+            <TextArea fx:id="txtBio" prefHeight="100" wrapText="true" styleClass="text-area-neon" promptText="Cuenta algo sobre ti..."/>
+        </VBox>
+
+        <HBox alignment="CENTER_RIGHT" spacing="15" style="-fx-padding: 15 0 0 0;">
+            <Button text="Cancelar" onAction="#cerrar" style="-fx-background-color: transparent; -fx-text-fill: #777; -fx-font-weight: bold; -fx-cursor: hand;"/>
+            <Button text="Guardar Cambios" onAction="#guardar" styleClass="button-principal" style="-fx-padding: 10 25; -fx-text-fill: white;"/>
+        </HBox>
+    </VBox>
+</StackPane>

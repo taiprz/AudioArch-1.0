@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<StackPane styleClass="song-card-v2" prefWidth="200" prefHeight="280"
+           stylesheets="@../css/login.css" xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml" fx:controller="com.audioarch.ui.controller.ItemController">
+
+    <clip>
+        <javafx.scene.shape.Rectangle width="200" height="280" arcWidth="48" arcHeight="48" />
+    </clip>
+
+    <!-- Background Image (NO clip — the container clips via background-radius) -->
+    <ImageView fx:id="imgPortada" fitHeight="280" fitWidth="200" preserveRatio="false">
+        <Image url="@../imagenes/audio arch - icono.png"/>
+    </ImageView>
+
+    <!-- Gradient Overlay -->
+    <Region styleClass="card-gradient-overlay" />
+
+    <!-- Play Overlay (hover, visible only for tracks with preview) -->
+    <StackPane fx:id="playOverlay" styleClass="play-overlay" visible="false">
+        <Label text="▶" styleClass="play-overlay-icon"/>
+    </StackPane>
+
+    <!-- Overlay Content -->
+    <VBox alignment="BOTTOM_LEFT" spacing="5" style="-fx-padding: 15;" pickOnBounds="false">
+        <Label fx:id="lblTitulo" text="Título" styleClass="card-title"/>
+        <HBox spacing="5" alignment="CENTER_LEFT">
+            <Label text="★" style="-fx-text-fill: #fe7faa; -fx-font-size: 12;"/>
+            <Label fx:id="lblArtista" text="Artista" styleClass="card-subtitle"/>
+        </HBox>
+        
+        <!-- Action Buttons -->
+        <HBox spacing="10" alignment="CENTER" styleClass="card-actions-container">
+            <Button fx:id="btnCalificar" text="Califica" onAction="#abrirResena" styleClass="btn-card-action" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+            <Button fx:id="btnAddPlaylist" text="➕" onAction="#añadirAPlaylist" styleClass="btn-card-action-mini"/>
+        </HBox>
+    </VBox>
+</StackPane>

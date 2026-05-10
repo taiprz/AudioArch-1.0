@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<HBox fx:id="titleBar" alignment="CENTER_LEFT" spacing="10" 
+      styleClass="title-bar"
+      stylesheets="@../css/title_bar.css"
+      xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.audioarch.ui.controller.TitleBarController">
+    <ImageView fitHeight="20" preserveRatio="true">
+        <image>
+            <Image url="@../imagenes/audio arch - icono.png"/>
+        </image>
+    </ImageView>
+    <Label text="AudioArch" styleClass="title-text"/>
+    <Region HBox.hgrow="ALWAYS" />
+    <Button text="—" onAction="#minimizar" styleClass="title-btn" style="-fx-font-size: 16px;"/>
+    <Button text="□" onAction="#maximizar" styleClass="title-btn" style="-fx-font-size: 20px;"/>
+    <Button text="✕" onAction="#cerrar" styleClass="title-btn, close-btn" style="-fx-font-size: 16px;"/>
+</HBox>

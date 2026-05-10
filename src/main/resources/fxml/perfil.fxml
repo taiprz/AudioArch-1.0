@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.effect.DropShadow?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.audioarch.ui.controller.PerfilController"
+      style="-fx-background-color: radial-gradient(center 50% 50%, radius 70%, rgba(254, 127, 170, 0.11) 0%, #0e0e0e 80%);"
+      VBox.vgrow="ALWAYS">
+
+    <StackPane prefHeight="150" maxWidth="Infinity" style="-fx-background-color: #1a1a1a;">
+        <ImageView fx:id="imgBanner" fitHeight="150" preserveRatio="false" smooth="true"/>
+    </StackPane>
+
+    <HBox spacing="20" style="-fx-padding: 0 30 10 30; -fx-translate-y: -40;">
+    <StackPane fx:id="stackFotoPerfil" minWidth="100" maxWidth="100" minHeight="100" maxHeight="100">
+        <!-- Skeleton circular visible mientras la imagen carga -->
+        <javafx.scene.layout.Region fx:id="skeletonAvatar"
+            minWidth="100" maxWidth="100" minHeight="100" maxHeight="100"
+            styleClass="skeleton-avatar"
+            style="-fx-background-radius: 50;"/>
+        <ImageView fx:id="imgFotoPerfil" fitHeight="100" fitWidth="100" preserveRatio="false">
+            <clip>
+                <Circle centerX="50" centerY="50" radius="50" />
+            </clip>
+            <effect>
+                 <DropShadow color="black" radius="10"/>
+            </effect>
+        </ImageView>
+    </StackPane>
+        
+        <VBox spacing="5" alignment="CENTER_LEFT" style="-fx-padding: 45 0 0 0;">
+            <Label fx:id="lblUsername" text="@usuario" style="-fx-text-fill: #fec7e8; -fx-font-size: 28px; -fx-font-weight: 800; -fx-letter-spacing: -0.5px;"/>
+            <HBox spacing="15">
+                <Label fx:id="lblSeguidores" text="0 Seguidores" style="-fx-text-fill: #555; -fx-font-size: 11px; -fx-font-weight: 700; -fx-letter-spacing: 0.08em;"/>
+                <Label fx:id="lblSiguiendo" text="0 Siguiendo" style="-fx-text-fill: #555; -fx-font-size: 11px; -fx-font-weight: 700; -fx-letter-spacing: 0.08em;"/>
+            </HBox>
+        </VBox>
+        <Region HBox.hgrow="ALWAYS"/>
+        <VBox alignment="CENTER" style="-fx-padding: 40 0 0 0;">
+             <Button fx:id="btnAccionSigue" style="-fx-background-color: linear-gradient(to right, #fec7e8, #ec91ff); -fx-text-fill: #1a001a; -fx-background-radius: 30; -fx-padding: 8 24; -fx-font-weight: 700; -fx-font-size: 13px; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(254, 127, 170, 0.3), 10, 0, 0, 3);"/>
+        </VBox>
+    </HBox>
+
+    <VBox style="-fx-padding: 0 30 20 30; -fx-translate-y: -10;">
+        <Label fx:id="lblBio" text="Biografía del usuario..." wrapText="true" style="-fx-text-fill: #dddddd; -fx-font-size: 14;"/>
+    </VBox>
+    
+    <Separator opacity="0.1" style="-fx-background-color: white; -fx-padding: 0 20 0 20;"/>
+
+    <HBox spacing="20" style="-fx-padding: 15 30 5 30;">
+        <Button fx:id="btnTabResenas" text="Reseñas" onAction="#mostrarTabResenas" style="-fx-background-color: transparent; -fx-text-fill: #fec7e8; -fx-font-weight: 700; -fx-font-size: 16px; -fx-cursor: hand; -fx-border-color: #fec7e8; -fx-border-width: 0 0 2 0;"/>
+        <Button fx:id="btnTabPlaylists" text="Playlists" onAction="#mostrarTabPlaylists" style="-fx-background-color: transparent; -fx-text-fill: #6b6b6b; -fx-font-weight: 600; -fx-font-size: 16px; -fx-cursor: hand; -fx-border-width: 0;"/>
+    </HBox>
+    
+    <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: #0e0e0e;" VBox.vgrow="ALWAYS">
+        <StackPane>
+            <VBox fx:id="vboxReseñas" spacing="15" style="-fx-padding: 10 30 20 30;" visible="true" managed="true"/>
+            <VBox fx:id="vboxPlaylists" spacing="15" style="-fx-padding: 10 30 20 30;" visible="false" managed="false"/>
+        </StackPane>
+    </ScrollPane>
+</VBox>
