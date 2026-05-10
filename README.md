@@ -1,4 +1,4 @@
-﻿<div align="center">
+<div align="center">
 
 # 🎵 AudioArch
 
@@ -56,7 +56,7 @@ AudioArch cuenta con un **módulo social completo**: perfiles personalizables (c
 
 El proyecto implementa una **arquitectura MVC** limpia:
 
-`	ext
+```text
 src/main/java/com/audioarch/
 ├── domain/
 │   └── model/          # Entidades JPA (Usuario, Cancion, Album, Artista, ...)
@@ -67,7 +67,7 @@ src/main/java/com/audioarch/
 └── ui/
     ├── controller/     # Controladores JavaFX
     └── service/        # Servicios de UI (alertas, Base64, navegación)
-`
+```
 
 **Patrones aplicados:**
 - **MVC** — Separación de modelo, vista (FXML/CSS) y controladores.
@@ -80,14 +80,14 @@ src/main/java/com/audioarch/
 
 ## 🚀 Instalación y ejecución
 
-`ash
+```bash
 # 1. Clonar el repositorio
-git clone https://github.com/taiprz/AudioArch.git
+git clone https://github.com/taiprz/AudioArch-1.0.git
 cd AudioArch
 
 # 2. Compilar y lanzar la aplicación
 mvn clean javafx:run
-`
+```
 
 > ✅ **Sin configuración de base de datos:** Al utilizar persistencia en la nube mediante Neon.tech e Hibernate, la aplicación genera y sincroniza su esquema automáticamente al ejecutarse. No se requiere servidor local.
 
