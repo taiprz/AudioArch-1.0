@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎵 AudioArch
+#  AudioArch
 
 *Una plataforma de escritorio multiplataforma donde la música se descubre, se analiza y se comparte.*
 
@@ -13,7 +13,7 @@
 
 ---
 
-## 📖 Descripción
+##  Descripción
 
 AudioArch es una aplicación de escritorio multiplataforma finalizada, desarrollada en **Java + JavaFX**, que permite a los usuarios explorar, catalogar y compartir música de forma social.
 
@@ -23,22 +23,22 @@ AudioArch cuenta con un **módulo social completo**: perfiles personalizables (c
 
 ---
 
-## ✨ Funcionalidades principales
+##  Funcionalidades principales
 
 | Módulo | Descripción |
 |---|---|
-| 🔐 **Autenticación** | Registro e inicio de sesión con contraseñas cifradas mediante BCrypt. |
-| 🔍 **Búsqueda híbrida** | Motor de búsqueda con debounce (500ms) para consultar la API de Deezer y la base de datos local simultáneamente. |
-| ⭐ **Sistema de reseñas** | Creación, edición y borrado de calificaciones (1–10 estrellas) acompañadas de texto libre. |
-| 👥 **Red social** | Sistema de seguimiento de usuarios con ordenamiento inteligente basado en la actividad reciente (últimas reseñas). |
-| 📰 **Feed de actividad** | Visualización en tiempo real de las reseñas de la comunidad general y de tu red personal de seguidos. |
-| 🎧 **Reproductor** | Previsualización nativa de 30 segundos del catálogo oficial. |
-| 📋 **Playlists mixtas** | Listas de reproducción con carátulas personalizadas (Base64) e integración de tracks de la API. |
-| 👤 **Perfiles Nativos** | Personalización completa (foto, banner y biografía) con almacenamiento universal Base64, garantizando visibilidad en la nube para todos los usuarios. |
+|  **Autenticación** | Registro e inicio de sesión con contraseñas cifradas mediante BCrypt. |
+|  **Búsqueda híbrida** | Motor de búsqueda con debounce (500ms) para consultar la API de Deezer y la base de datos local simultáneamente. |
+|  **Sistema de reseñas** | Creación, edición y borrado de calificaciones (1–10 estrellas) acompañadas de texto libre. |
+|  **Red social** | Sistema de seguimiento de usuarios con ordenamiento inteligente basado en la actividad reciente (últimas reseñas). |
+|  **Feed de actividad** | Visualización en tiempo real de las reseñas de la comunidad general y de tu red personal de seguidos. |
+|  **Reproductor** | Previsualización nativa de 30 segundos del catálogo oficial. |
+|  **Playlists mixtas** | Listas de reproducción con carátulas personalizadas (Base64) e integración de tracks de la API. |
+|  **Perfiles Nativos** | Personalización completa (foto, banner y biografía) con almacenamiento universal Base64, garantizando visibilidad en la nube para todos los usuarios. |
 
 ---
 
-## 🛠️ Stack tecnológico
+##  Stack tecnológico
 
 | Tecnología | Versión | Uso |
 |---|---|---|
@@ -52,7 +52,7 @@ AudioArch cuenta con un **módulo social completo**: perfiles personalizables (c
 
 ---
 
-## 🏗️ Arquitectura y patrones
+##  Arquitectura y patrones
 
 El proyecto implementa una **arquitectura MVC** limpia:
 
@@ -78,7 +78,7 @@ src/main/java/com/audioarch/
 
 ---
 
-## 🚀 Instalación y ejecución
+##  Instalación y ejecución
 
 ```bash
 # 1. Clonar el repositorio
@@ -89,11 +89,11 @@ cd AudioArch
 mvn clean javafx:run
 ```
 
-> ✅ **Sin configuración de base de datos:** Al utilizar persistencia en la nube mediante Neon.tech e Hibernate, la aplicación genera y sincroniza su esquema automáticamente al ejecutarse. No se requiere servidor local.
+>  **Sin configuración de base de datos:** Al utilizar persistencia en la nube mediante Neon.tech e Hibernate, la aplicación genera y sincroniza su esquema automáticamente al ejecutarse. No se requiere servidor local.
 
 ---
 
-## 🎨 Diseño — Identidad "The Sonic Gallery"
+##  Diseño — Identidad "The Sonic Gallery"
 
 El proyecto presenta una estética premium denominada **Dark Electronic Music Editorial**:
 - **Paleta de Colores:** Deep Black (#050505), Neon Pink (#FE7FAA), Lavender Glow (#EC91FF).
@@ -101,7 +101,7 @@ El proyecto presenta una estética premium denominada **Dark Electronic Music Ed
 
 ---
 
-## 📄 Licencia
+##  Licencia
 
 Proyecto académico finalizado para el **Proyecto de Fin de Grado** · 2º DAM · 2025/2026.
 <div align="center">
